@@ -42,6 +42,7 @@ header {
     top: 40%; /* wrt parent */
     left: 50%;
     transform: translate(-50%, -50%); /* wrt self */
+    text-align: center;
 }
 
 .header-primary {
@@ -49,6 +50,8 @@ header {
     font-size: 60px;
     font-weight: 400;
     letter-spacing: 35px;
+    animation-name: moveInLeft;
+    animation-duration: 1.5s;
 }
 
 .header-secondary {
@@ -56,4 +59,77 @@ header {
     font-size: 20px;
     font-weight: 300;
     letter-spacing: 17.5px;
+    animation-name: moveInRight;
+    animation-duration: 1.5s;
+}
+
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-200px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(200px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(200px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveInTop {
+    0% {
+        opacity: 0;
+        transform: translateY(+200px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.btn {
+    background-color: #ffffff;
+    color: #777;
+    padding: 15px 40px;
+    border-radius: 100px;
+    display: inline-block;
+    margin-top: 60px;
+    animation-name: moveInTop;
+    animation-duration: 1.5s;
+    animation-duration: 1s;;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
