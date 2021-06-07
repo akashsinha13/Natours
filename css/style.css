@@ -113,18 +113,22 @@ header {
 }
 
 .btn {
-    background-color: #ffffff;
-    color: #777;
     padding: 15px 40px;
     border-radius: 100px;
     display: inline-block;
     margin-top: 60px;
     animation-name: moveInTop;
     animation-duration: 1.5s;
-    animation-duration: 1s;;
+    transition: all .2s; /* another way of adding animation; accepts property and duration */
+    position: relative;
 }
 
-.btn:hover {
+.btn-white {
+    background-color: #ffffff; /* not written in above class as above props can be used for other buttons */
+    color: #777;
+}
+
+.btn:hover { /* pseudo class */
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
@@ -132,4 +136,27 @@ header {
 .btn:active {
     transform: translateY(-1px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* trying to create an identical button which sits behind original button */
+.btn::after { /* pseudo element */
+    content: ""; /* mandatory param */
+    display: inline-block; /* mandatory param */
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* to hide initially */
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all .2s;
+}
+
+.btn-white::after {
+    background-color: #ffffff;
+}
+
+.btn:hover::after{
+    transform: scaleX(1.3) scaleY(1.6);
+    opacity: 0; /* to hide after scaling */
 }
