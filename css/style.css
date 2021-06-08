@@ -1,79 +1,7 @@
-* {
-  margin: 0;
-  padding: 0;
-  /* Added padding and border to the existing width.
-    content size will shrink, no impact on overall width.
-    Opp. of content box which is default one. */
-  box-sizing: border-box; }
-
-body {
-  font-family: "lato", sans-serif;
-  /* For inheritance purpose, should be written here; not in univarsal selector */
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.7;
-  color: #777;
-  padding: 20px; }
-
-.header {
-  height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 79, 0.6), rgba(40, 180, 133, 0.9)), url(../img/hero.jpg);
-  background-size: cover;
-  /* Stretches the image to complete width */
-  background-position: top;
-  /* On resizing the browser, top will be fixed. */
-  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
-  /* Acts as a cutter of image */
-  position: relative; }
-
-.header__logo {
-  position: absolute;
-  top: 40px;
-  left: 40px; }
-
-.header__logo img {
-  height: 35px;
-  /* width will be adjusted as per height by the browser */ }
-
-.header__title {
-  color: #ffffff;
-  text-transform: uppercase;
-  position: absolute;
-  top: 40%;
-  /* wrt parent */
-  left: 50%;
-  transform: translate(-50%, -50%);
-  /* wrt self */
-  text-align: center; }
-
-.header__title--primary {
-  display: block;
-  font-size: 60px;
-  font-weight: 400;
-  letter-spacing: 35px;
-  animation-name: moveInLeft;
-  animation-duration: 1.5s; }
-
-.header__title--secondary {
-  display: block;
-  font-size: 20px;
-  font-weight: 300;
-  letter-spacing: 17.5px;
-  animation-name: moveInRight;
-  animation-duration: 1.5s; }
-
 @keyframes moveInLeft {
   0% {
     opacity: 0;
     transform: translateX(-200px); }
-  100% {
-    opacity: 1;
-    transform: translateX(0); } }
-
-@keyframes moveInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(200px); }
   100% {
     opacity: 1;
     transform: translateX(0); } }
@@ -94,6 +22,23 @@ body {
     opacity: 1;
     transform: translateY(0); } }
 
+* {
+  margin: 0;
+  padding: 0;
+  /* Added padding and border to the existing width.
+    content size will shrink, no impact on overall width.
+    Opp. of content box which is default one. */
+  box-sizing: border-box; }
+
+body {
+  font-family: "lato", sans-serif;
+  /* For inheritance purpose, should be written here; not in univarsal selector */
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #777;
+  padding: 20px; }
+
 .btn {
   padding: 15px 40px;
   border-radius: 100px;
@@ -103,43 +48,79 @@ body {
   animation-duration: 1.5s;
   transition: all .2s;
   /* another way of adding animation; accepts property and duration */
+  position: relative;
+  /* trying to create an identical button which sits behind original button */ }
+  .btn--white {
+    background-color: #ffffff;
+    /* not written in above class as above props can be used for other buttons */
+    color: #777; }
+    .btn--white::after {
+      background-color: #ffffff; }
+  .btn:hover {
+    /* pseudo class */
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); }
+    .btn:hover::after {
+      transform: scaleX(1.3) scaleY(1.6);
+      opacity: 0;
+      /* to hide after scaling */ }
+  .btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); }
+  .btn::after {
+    /* pseudo element */
+    content: "";
+    /* mandatory param */
+    display: inline-block;
+    /* mandatory param */
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /* to hide initially */
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all .2s; }
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 79, 0.6), rgba(40, 180, 133, 0.9)), url(../img/hero.jpg);
+  background-size: cover;
+  /* Stretches the image to complete width */
+  background-position: top;
+  /* On resizing the browser, top will be fixed. */
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+  /* Acts as a cutter of image */
   position: relative; }
-
-.btn--white {
-  background-color: #ffffff;
-  /* not written in above class as above props can be used for other buttons */
-  color: #777; }
-
-.btn:hover {
-  /* pseudo class */
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); }
-
-.btn:active {
-  transform: translateY(-1px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); }
-
-/* trying to create an identical button which sits behind original button */
-.btn::after {
-  /* pseudo element */
-  content: "";
-  /* mandatory param */
-  display: inline-block;
-  /* mandatory param */
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  /* to hide initially */
-  border-radius: 100px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: all .2s; }
-
-.btn--white::after {
-  background-color: #ffffff; }
-
-.btn:hover::after {
-  transform: scaleX(1.3) scaleY(1.6);
-  opacity: 0;
-  /* to hide after scaling */ }
+  .header__logo {
+    position: absolute;
+    top: 40px;
+    left: 40px; }
+    .header__logo img {
+      height: 35px;
+      /* width will be adjusted as per height by the browser */ }
+  .header__title {
+    color: #ffffff;
+    text-transform: uppercase;
+    position: absolute;
+    top: 40%;
+    /* wrt parent */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* wrt self */
+    text-align: center; }
+    .header__title--primary {
+      display: block;
+      font-size: 60px;
+      font-weight: 400;
+      letter-spacing: 35px;
+      animation-name: moveInLeft;
+      animation-duration: 1.5s; }
+    .header__title--secondary {
+      display: block;
+      font-size: 20px;
+      font-weight: 300;
+      letter-spacing: 17.5px;
+      animation-name: moveInRight;
+      animation-duration: 1.5s; }

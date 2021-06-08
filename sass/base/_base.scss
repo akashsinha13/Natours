@@ -1,0 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* Added padding and border to the existing width.
+    content size will shrink, no impact on overall width.
+    Opp. of content box which is default one. */
+    box-sizing: border-box;
+}

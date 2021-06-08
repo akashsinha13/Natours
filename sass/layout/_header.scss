@@ -1,0 +1,46 @@
+.header {
+    height: 95vh;
+    background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.6), rgba($color-primary-dark, 0.9)), url(../img/hero.jpg);
+    background-size: cover; /* Stretches the image to complete width */
+    background-position: top; /* On resizing the browser, top will be fixed. */
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%); /* Acts as a cutter of image */
+    position: relative;
+
+    &__logo {
+        position: absolute;
+        top: 40px;
+        left: 40px;
+
+        img {
+            height: 35px; /* width will be adjusted as per height by the browser */
+        }
+    }
+
+    &__title {
+        color: $color-white;
+        text-transform: uppercase;
+        position: absolute;
+        top: 40%; /* wrt parent */
+        left: 50%;
+        transform: translate(-50%, -50%); /* wrt self */
+        text-align: center;
+
+        &--primary {
+            display: block;
+            font-size: 60px;
+            font-weight: 400;
+            letter-spacing: 35px;
+            animation-name: moveInLeft;
+            animation-duration: 1.5s;
+        }
+
+        &--secondary {
+            display: block;
+            font-size: 20px;
+            font-weight: 300;
+            letter-spacing: 17.5px;
+            animation-name: moveInRight;
+            animation-duration: 1.5s;
+        }
+    }
+}
