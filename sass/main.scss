@@ -1,8 +1,10 @@
 $color-primary: #55c57a;
 $color-primary-light: #7ed54f;
 $color-primary-dark: #28b485;
+
 $color-white: #ffffff;
 $color-grey: #777;
+$color-black: #000000;
 
 * {
     margin: 0;
@@ -29,46 +31,45 @@ body {
     background-position: top; /* On resizing the browser, top will be fixed. */
     clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%); /* Acts as a cutter of image */
     position: relative;
-}
 
-.header__logo {
-    position: absolute;
-    top: 40px;
-    left: 40px;
-}
+    &__logo {
+        position: absolute;
+        top: 40px;
+        left: 40px;
 
-.header__logo img {
-    height: 35px; /* width will be adjusted as per height by the browser */
-}
+        img {
+            height: 35px; /* width will be adjusted as per height by the browser */
+        }
+    }
 
-.header__title {
-    color: $color-white;
-    text-transform: uppercase;
-    position: absolute;
-    top: 40%; /* wrt parent */
-    left: 50%;
-    transform: translate(-50%, -50%); /* wrt self */
-    text-align: center;
-}
+    &__title {
+        color: $color-white;
+        text-transform: uppercase;
+        position: absolute;
+        top: 40%; /* wrt parent */
+        left: 50%;
+        transform: translate(-50%, -50%); /* wrt self */
+        text-align: center;
 
-.header__title--primary {
-    display: block;
-    font-size: 60px;
-    font-weight: 400;
-    letter-spacing: 35px;
-    animation-name: moveInLeft;
-    animation-duration: 1.5s;
-}
+        &--primary {
+            display: block;
+            font-size: 60px;
+            font-weight: 400;
+            letter-spacing: 35px;
+            animation-name: moveInLeft;
+            animation-duration: 1.5s;
+        }
 
-.header__title--secondary {
-    display: block;
-    font-size: 20px;
-    font-weight: 300;
-    letter-spacing: 17.5px;
-    animation-name: moveInRight;
-    animation-duration: 1.5s;
+        &--secondary {
+            display: block;
+            font-size: 20px;
+            font-weight: 300;
+            letter-spacing: 17.5px;
+            animation-name: moveInRight;
+            animation-duration: 1.5s;
+        }
+    }
 }
-
 
 @keyframes moveInLeft {
     0% {
@@ -127,42 +128,42 @@ body {
     animation-duration: 1.5s;
     transition: all .2s; /* another way of adding animation; accepts property and duration */
     position: relative;
-}
 
-.btn--white {
-    background-color: $color-white; /* not written in above class as above props can be used for other buttons */
-    color: $color-grey;
-}
+    &--white {
+        background-color: $color-white; /* not written in above class as above props can be used for other buttons */
+        color: $color-grey;
 
-.btn:hover { /* pseudo class */
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
+        ::after {
+            background-color: $color-white;
+        }
+    }
 
-.btn:active {
-    transform: translateY(-1px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
+    &:hover { /* pseudo class */
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba($color-black, 0.2);
 
-/* trying to create an identical button which sits behind original button */
-.btn::after { /* pseudo element */
-    content: ""; /* mandatory param */
-    display: inline-block; /* mandatory param */
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* to hide initially */
-    border-radius: 100px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: all .2s;
-}
+        &::after{
+            transform: scaleX(1.3) scaleY(1.6);
+            opacity: 0; /* to hide after scaling */
+        }
+    }
 
-.btn--white::after {
-    background-color: $color-white;
-}
+    &:active {
+        transform: translateY(-1px);
+        box-shadow: 0 10px 20px rgba($color-black, 0.2);
+    }
 
-.btn:hover::after{
-    transform: scaleX(1.3) scaleY(1.6);
-    opacity: 0; /* to hide after scaling */
+    /* trying to create an identical button which sits behind original button */
+    &::after { /* pseudo element */
+        content: ""; /* mandatory param */
+        display: inline-block; /* mandatory param */
+        width: 100%;
+        height: 100%;
+        z-index: -1; /* to hide initially */
+        border-radius: 100px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: all .2s;
+    }
 }
