@@ -2,7 +2,7 @@
     display: inline-block;
     padding: 0.9rem 3rem;
     border-radius: 6rem;
-    margin-top: 4.5rem;
+    margin-top: $margin-large;
     animation-name: moveInTop;
     animation-duration: 1.5s;
     transition: all .2s; // another way of adding animation; accepts property and duration
@@ -44,5 +44,18 @@
         top: 0;
         left: 0;
         transition: all .2s;
+    }
+}
+
+.btn-link {
+    display: inline-block;
+    margin-top: $margin;
+    color: $color-primary;
+    text-decoration: none;
+    border-bottom: .01rem solid $color-primary ;
+
+    &:hover {
+        background-color: $color-primary;
+        color: $color-white;
     }
 }

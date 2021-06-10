@@ -1,0 +1,23 @@
+.section-title {
+    display: inline-block;
+    margin-bottom: $margin;
+    font-size: 1.8rem;
+    font-weight: 800;
+    background-image: linear-gradient(to right, rgba($color-primary-light, 0.6), rgba($color-primary-dark, 0.9));
+    -webkit-background-clip: text; // add the image to text
+    color: transparent; // hide the color to add background
+    transition: all .2s;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+
+    &:hover {
+        transform: skewY(2deg) skewX(25deg) scale(1.2);
+        text-shadow: .5rem 1rem 2rem rgba($color-black, 0.2);
+    }
+}
+
+.section-subtitle {
+    display: inline-block;
+    margin-top: $margin;
+    margin-bottom: $margin-small;
+}
