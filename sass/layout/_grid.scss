@@ -1,0 +1,32 @@
+.row {
+    display: block;
+    max-width: 90%;
+    margin: 0 auto; // center the block element inside another block element
+
+    &:not(:last-child) {
+        margin-bottom: $row-margin-vertical;
+    }
+
+    @include clearfix; // to handle float properly
+
+    [class^="col-"] { // attribute selector
+        float: left;
+        background-color: $color-primary;
+
+        &:not(:last-child) {
+            margin-right: $row-margin-horizontal;
+        }
+    }
+
+    .col-1-of-2 {
+        width: calc((100% - #{$row-margin-horizontal}) / 2);
+    }
+
+    .col-1-of-3 {
+        width: calc((100% -  2* #{$row-margin-horizontal}) / 3);
+    }
+
+    .col-2-of-3 {
+        width: calc(2* ((100% - 2 * #{$row-margin-horizontal}) / 3));
+    }
+}
