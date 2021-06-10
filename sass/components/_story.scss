@@ -1,0 +1,64 @@
+.story {
+    display: block;
+    height: 20vh;
+    max-width: 75%;
+    padding: 1rem;
+    margin: $margin auto;
+    margin-bottom: $margin-large;
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.4);
+    background-color: rgba($color-white, 0.6);
+    transform: skewX(-15deg);
+
+    & > * { // to all child
+        transform: skewX(15deg);
+    }
+
+    &-figure {
+        float: left;
+        width: 8rem;
+        height: 8rem;
+        margin: 0 2rem 0 1rem;
+        shape-outside: circle(50% at 50% 50%); // make the outer text float like circle
+        clip-path: circle(50% at 50% 50%); // make the image look like circle
+        -webkit-clip-path: circle(50% at 50% 50%); // to support all browsers 
+        -webkit-shape-outside: circle(50% at 50% 50%);
+        position: relative;
+        transition: all .3s;
+
+        img {
+            transform: scale(1.2);
+            height: 100%; 
+        }
+
+        &-caption {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -20%);
+            color: $color-white;
+            text-transform: uppercase;
+            text-align: center;
+            opacity: 0;
+            transition: all .2s;
+        }  
+    }
+
+    &:hover &-figure {
+        &-caption {
+            opacity: 1;
+            transform: translate(-50%, -50%);
+        }
+        
+        img {
+            transform: scale(1);
+            filter: blur(3px) brightness(80%); // way to blur image
+        }
+    }
+
+    &-description {
+        &:first-child {
+            text-transform: uppercase;
+            margin-top: 1rem;
+        }
+    }
+}
