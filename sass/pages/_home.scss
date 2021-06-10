@@ -1,5 +1,13 @@
 .section-about {
-    padding: 25rem 0;
+    padding: 25rem 0 45rem 0;
     margin-top: -20%;
     background-color: $color-grey-light;
+}
+
+.section-features {
+    padding: 15rem 0;
+    margin-top: -12%;
+    background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.6), rgba($color-primary-dark, 0.9)), url(../img/nat-4.jpg);
+    background-size: cover; // stretches the image to complete width
+    clip-path: polygon(0 15%, 100% 0, 100% 80%, 0 100%); // acts as a cutter of image
 }

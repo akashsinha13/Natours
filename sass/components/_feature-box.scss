@@ -1,0 +1,18 @@
+.feature-box {
+    background-color: rgba($color-white, 0.8);
+    padding: 1rem;
+    border-radius: 0.2rem;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.4);
+    transition: all 0.2s;
+
+    [class^="icon"] {
+        font-size: 3rem;
+        background-image: linear-gradient(to right, rgba($color-primary-light, 0.2), rgba($color-primary-dark, 0.9));
+        -webkit-background-clip: text; // add the image to text
+        color: transparent; // hide the color to add background
+    }
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
