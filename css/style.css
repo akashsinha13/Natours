@@ -44,7 +44,7 @@ header, section {
   margin-bottom: 2rem;
   font-size: 1.8rem;
   font-weight: 800;
-  background-image: linear-gradient(to right, rgba(126, 213, 79, 0.2), rgba(40, 180, 133, 0.9));
+  background-image: linear-gradient(to right, rgba(126, 213, 79, 0.4), rgba(40, 180, 133, 0.9));
   -webkit-background-clip: text;
   color: transparent;
   transition: all .2s;
@@ -61,6 +61,12 @@ header, section {
 
 .u-align-center {
   text-align: center; }
+
+.u-top-hr-line {
+  border-top: 1px solid #777; }
+
+.u-margin-top {
+  margin-top: 5rem; }
 
 .composition {
   position: relative;
@@ -142,14 +148,34 @@ header, section {
   transition: all 0.2s; }
   .feature-box [class^="icon"] {
     font-size: 3rem;
-    background-image: linear-gradient(to right, rgba(126, 213, 79, 0.2), rgba(40, 180, 133, 0.9));
+    background-image: linear-gradient(to right, rgba(126, 213, 79, 0.4), rgba(40, 180, 133, 0.9));
     -webkit-background-clip: text;
     color: transparent; }
   .feature-box:hover {
     transform: scale(1.1); }
 
+.footer {
+  background-color: #333;
+  padding: 10rem 0; }
+  .footer-logo img {
+    height: 7rem; }
+  .footer-list {
+    list-style: none; }
+    .footer-list li {
+      display: inline-block; }
+      .footer-list li:not(:last-child) {
+        margin-right: .5rem; }
+      .footer-list li a {
+        display: inline-block;
+        color: #777;
+        text-decoration: none;
+        text-transform: uppercase; }
+        .footer-list li a:hover {
+          color: #55c57a;
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4); }
+
 .header {
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 79, 0.2), rgba(40, 180, 133, 0.9)), url(../img/hero.jpg);
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 79, 0.4), rgba(40, 180, 133, 0.9)), url(../img/hero.jpg);
   background-size: cover;
   background-position: top;
   clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
@@ -212,6 +238,6 @@ header, section {
 .section-features {
   padding: 15rem 0;
   margin-top: -12%;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 79, 0.6), rgba(40, 180, 133, 0.9)), url(../img/nat-4.jpg);
+  background-image: linear-gradient(to right bottom, rgba(85, 197, 122, 0.4), rgba(40, 180, 133, 0.9)), url(../img/nat-4.jpg);
   background-size: cover;
   clip-path: polygon(0 15%, 100% 0, 100% 80%, 0 100%); }

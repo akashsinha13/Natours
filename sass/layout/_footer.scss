@@ -1,0 +1,33 @@
+.footer {
+    background-color: $color-grey-dark;
+    padding: 10rem 0;
+    
+    &-logo {
+        img {
+            height: 7rem;
+        }
+    }
+
+    &-list {
+        list-style: none;
+        li {
+            display: inline-block;
+
+            &:not(:last-child) {
+                margin-right: .5rem;
+            }
+
+            a {
+                display: inline-block;
+                color: $color-grey;
+                text-decoration: none;
+                text-transform: uppercase;
+
+                &:hover {
+                    color: $color-primary;
+                    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.4);
+                }
+            }
+        }
+    }
+}

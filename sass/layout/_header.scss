@@ -1,5 +1,5 @@
 .header {
-    background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.2), rgba($color-primary-dark, 0.9)), url(../img/hero.jpg);
+    background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.4), rgba($color-primary-dark, 0.9)), url(../img/hero.jpg);
     background-size: cover; // stretches the image to complete width
     background-position: top; // on resizing the browser, top will be fixed.
     clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%); // acts as a cutter of image
