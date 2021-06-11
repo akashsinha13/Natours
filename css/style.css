@@ -155,6 +155,18 @@ header, section {
     color: #ffffff;
     padding: 0 0.2rem; }
 
+.btn-form {
+  display: inline-block;
+  padding: 0.5rem;
+  margin-left: 8rem;
+  color: #ffffff;
+  background-color: #55c57a;
+  border: 1px solid #55c57a;
+  border-radius: 0.2rem;
+  transition: all .2s; }
+  .btn-form:hover {
+    transform: scale(1.1); }
+
 .feature-box {
   background-color: rgba(255, 255, 255, 0.8);
   padding: 1rem;
@@ -168,6 +180,42 @@ header, section {
     color: transparent; }
   .feature-box:hover {
     transform: scale(1.1); }
+
+.form-group {
+  margin-bottom: 2rem; }
+
+.form-label {
+  display: block;
+  font-weight: 600;
+  font-family: inherit;
+  color: inherit;
+  margin-left: 0.8rem; }
+
+.form-input {
+  width: 55%;
+  display: block;
+  color: inherit;
+  font-family: inherit;
+  font-size: 1.2rem;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 0.7rem;
+  border-bottom: 3px solid transparent;
+  border-radius: 0.3rem;
+  transition: all .3s; }
+  .form-input::-webkit-input-placeholder {
+    color: #777; }
+  .form-input:focus {
+    outline: none;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    border-bottom: 3px solid #55c57a; }
+  .form-input:focus:invalid {
+    border-bottom: 3px solid #ff7730; }
+
+.form-input:placeholder-shown + .form-label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-2.2rem); }
 
 .story {
   display: block;
@@ -304,6 +352,21 @@ header, section {
   clip-path: polygon(0 15%, 100% 0, 100% 80%, 0 100%); }
 
 .section-stories {
-  padding: 22rem 0 45rem 0;
+  padding: 27rem 0 45rem 0;
   margin-top: -16%;
   position: relative; }
+
+.section-book {
+  padding: 20rem 0 30rem 0;
+  background-image: linear-gradient(to right bottom, #55c57a, rgba(40, 180, 133, 0.9)); }
+
+.book {
+  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.7) 50%, transparent 50%), url(../img/nat-10.jpg);
+  width: 80%;
+  margin: 0 auto;
+  height: 70vh;
+  margin-top: -13%;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4); }
+  .book-form {
+    width: 70%;
+    padding: 5rem; }

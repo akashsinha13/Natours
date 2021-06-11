@@ -1,0 +1,49 @@
+.form {
+    &-group {
+        margin-bottom: $margin;
+    }
+
+    &-label {
+        display: block;
+        font-weight: 600;
+        font-family: inherit;
+        color: inherit;
+        margin-left: 0.8rem;
+    }
+
+    &-input {
+        width: 55%;
+        display: block;
+        color: inherit;
+        font-family: inherit; // required as form has different font style
+        font-size: 1.2rem;
+        border: none;
+        background-color: rgba($color-white, 0.5);
+        padding: 0.7rem;
+        border-bottom: 3px solid transparent;
+        border-radius: 0.3rem;
+        transition: all .3s;
+
+        &::-webkit-input-placeholder {
+            color: $color-grey;
+        }
+
+        &:focus {
+            outline: none;
+            box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+            border-bottom: 3px solid $color-primary;
+        }
+    
+        &:focus:invalid {
+            border-bottom: 3px solid $color-orange;
+        }
+    }
+
+    // + for adjacent sibling
+    // ~ for siblings
+    &-input:placeholder-shown + &-label {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-2.2rem);
+    }
+}
