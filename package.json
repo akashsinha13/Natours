@@ -1,10 +1,10 @@
 {
-  "name": "natours",
+  "name": "Natours",
   "version": "1.0.0",
   "description": "Template of Natours",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
-    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+    "compile:sass": "node-sass sass/main.scss css/style.css"
   },
   "repository": {
     "type": "git",
@@ -12,9 +12,6 @@
   },
   "author": "Akash Sinha",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/akashsinha13/Natours/issues"
-  },
   "homepage": "https://github.com/akashsinha13/Natours#readme",
   "devDependencies": {
     "node-sass": "^6.0.0"

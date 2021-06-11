@@ -42,8 +42,8 @@
     // + for adjacent sibling
     // ~ for siblings
     &-input:placeholder-shown + &-label {
-        opacity: 0;
-        visibility: hidden;
+        opacity: 0; // hide the element
+        visibility: hidden; // remove the element
         transform: translateY(-2.2rem);
     }
 }
